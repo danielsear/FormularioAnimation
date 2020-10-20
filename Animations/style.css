@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+body {
+  background-color: #7159c1;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 1.5;
+  margin: 20px 0;
+  color: #fdfdfd;
+}
+
+form {
+  margin: 20px 0;
+  background-color: #fdfdfd;
+  padding: 30px 25px;
+  border-radius: 5px;
+}
+
+form .input-block {
+  margin-bottom: 20px;
+}
+
+form .input-block label {
+  font-size: 14px;
+  color: darkslateblue;
+}
+
+form .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: #7159c1;
+  border-radius: 2px;
+  border: 1px solid #ccddef;
+  outline-color: #7159c1;
+}
+
+form .btn-login {
+  display: block;
+  min-width: 120px;
+  border: none;
+  background-color: #7159c1;
+  color: #fdfdfd;
+  border-radius: 25px;
+  margin: auto;
+  padding: 7px;
+}
+
+/*left entry effect*/
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+form .input-block:nth-child(1) {
+  animation: move 0.5s;
+}
+
+form .input-block:nth-child(2) {
+  animation: move 0.4s;
+  animation-delay: 0.1s;
+  animation-fill-mode: backwards; /*enquanto não for requisitado comece da posição inicial*/
+}
+
+form .btn-login {
+  animation: move 0.4s;
+  animation-delay: 0.25s;
+  animation-fill-mode: backwards;
+}
+
+form .input-block {
+  animation-name: move;
+  animation-duration: 0.5s;
+  animation-delay: 0.25s;
+}
+
+/*effect of appearing on the screen*/
+form {
+  overflow: hidden;
+  animation: fade 0.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*when you click on the button disappear the form for efect bottom*/
+
+.form-hidden {
+  animation: down 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
