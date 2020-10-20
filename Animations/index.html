@@ -6,21 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../validate/validate.css" />
 
     <title>FormsAnimation</title>
   </head>
   <body>
-    <section class="form-section">
+    <section class="form-section" onsubmit=" validandoForm(event)">
       <h1>Enter the Forms</h1>
       <div class="form-wrapper">
         <form action="">
           <div class="input-block">
-            <label for="login-email">Email</label>
-            <input type="email" class="login-email" />
+            <input
+              type="email"
+              class="login-email"
+              required
+              onchange="validaEmail(event)"
+            />
+            <label for="login-email" type="email">Email</label>
+            <span class="error" name="email"></span>
           </div>
           <div class="input-block">
-            <label for="login-password">Password</label>
-            <input type="password" class="login-password" />
+            <input
+              type="password"
+              class="login-password"
+              required
+              onchange="validaSenha(event)"
+            />
+            <label for="login-password" type="password">Password</label>
+            <span class="error" name="password"></span>
           </div>
           <button class="btn-login" type="submit">Login</button>
         </form>
@@ -28,5 +41,6 @@
     </section>
     <ul class="squares"></ul>
     <script src="../index.js"></script>
+    <script src="../validate/validate.js"></script>
   </body>
 </html>

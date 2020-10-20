@@ -1,0 +1,14 @@
+span.error {
+  display: flex;
+
+  padding: 0;
+
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+span.error.active {
+  border: 1px solid red;
+  padding: 0.4em;
+  font-size: 10px;
+  color: red;
+}
